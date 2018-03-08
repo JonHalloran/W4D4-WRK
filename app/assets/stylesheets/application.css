@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+header {
+  font: impact;
+  width: inherit;
+
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+}
+
+header form {
+  float: right;
+}
+header p {
+  float: right;
+}

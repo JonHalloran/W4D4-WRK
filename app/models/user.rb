@@ -24,12 +24,13 @@ class User < ApplicationRecord
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
+    return nil unless user
     return user if user.is_password?(password)
     nil
   end
 
   def is_password?(password)
-    BCrypt::Password.new(password)
+    BCrypt::Password.new(password_digest).is_password?(password)
   end
 
   def reset_session_token!
