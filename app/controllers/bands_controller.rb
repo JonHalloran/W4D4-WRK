@@ -1,7 +1,9 @@
 
 class BandsController < ApplicationController
 
-  def index; end
+  def index
+    @bands = Band.all
+  end
 
   def new; end
 
@@ -16,14 +18,19 @@ class BandsController < ApplicationController
     end
   end
 
-  def edit; end
-
-  def update
-    @band = Band.find(param[:id])
-    @band.update(band_params)
+  def edit
+    @band = Band.find(params[:id])
   end
 
-  def show; end
+  def update
+    @band = Band.find(params[:id])
+    @band.update(band_params)
+    redirect_to band_url(@band)
+  end
+
+  def show
+    @band = Band.find(params[:id])
+  end
 
   def destroy
     @band = Band.find(params[:id])

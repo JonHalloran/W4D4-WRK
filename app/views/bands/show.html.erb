@@ -1,0 +1,10 @@
+<h1><%= @band.name %></h1>
+
+<form action="<%= edit_band_url(@band) %>" method="get">
+  <button type="submit" name="button">Edit Band</button>
+</form>
+
+
+<form action="<%= bands_url %>" method="get">
+  <button type="submit" name="button">See Bands</button>
+</form>

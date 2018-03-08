@@ -1,0 +1,11 @@
+<h1>BEST BANDS EVER!!!</h1>
+
+<% @bands.each do |band| %>
+  <a href="<%= band_url(band) %>"><%= band.name %></a>
+  <br>
+<% end %>
+
+
+<form action="<%= new_band_url %>" method="get">
+  <button type="submit" name="button">Create New Band</button>
+</form>
