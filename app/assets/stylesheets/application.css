@@ -14,15 +14,19 @@
  *= require_self
  */
 
-header {
-  font: impact;
-  width: inherit;
+/* header {
+  display: block;
+  font-family: fantasy;
+  background-color: #8bc34a;
+  align-self: top;
+  align-items: center;
 
-}
-.flex-container {
+} */
+/* .flex-container {
   display: flex;
   flex-direction: row;
-  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 header form {
@@ -31,3 +35,43 @@ header form {
 header p {
   float: right;
 }
+.button_in {
+  background-color: green;
+  color: white
+}
+
+.button_out {
+  background-color: red;
+  color: white
+}
+body {
+
+}
+header ul{
+  float: right;
+}
+h1 {
+  text-align: center;
+}
+form {
+  clear: both;
+}
+.btn {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  font-family: Courier New;
+  color: #695269;
+  font-size: 12px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cfc53;
+  text-decoration: none;
+}
+button:hover {
+  background-color: green;
+} */

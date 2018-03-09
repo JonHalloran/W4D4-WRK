@@ -5,26 +5,39 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'foundation', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-    <header class='flex-container'>
+  <body >
+
+    <header >
       <h1>MUSIC APPPPPPPPP!!!!!!!!!</h1>
+      <% if flash[:error] %>
+        <%= flash[:error] %>
+      <% end %>
       <% if logged_in? %>
         <p>Hello, <%= current_user.email %>!!!!</p>
         <br>
         <form action="<%= sessions_url %>" method="post">
           <input type="hidden" name="_method" value="DELETE">
           <%= auth_token %>
-          <button type="submit">Log Out :(</button>
+          <button class="button_out" type="submit">Log Out :(</button>
         </form>
         </form>
       <% else %>
-        <form  action="<%= new_sessions_url %>" method="get">
-          <%= auth_token %>
-          <button type="submit">SIGN IN!!!</button>
-        </form>
+        <ul>
+
+          <form  action="<%= new_user_url %>" method="get">
+            <%= auth_token %>
+            <button class="button_in" type="submit">SIGN UP!!!</button>
+          </form>
+          <br>
+          <form  action="<%= new_sessions_url %>" method="get">
+            <%= auth_token %>
+            <button class="button_in" type="submit">SIGN IN!!!</button>
+          </form>
+        </ul>
       <% end %>
     </header>
     <%= yield %>

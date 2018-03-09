@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
       session_params[:password]
     )
     if @user
-      session[:session_token] = @user.reset_session_token!
-      redirect_to user_url(@user)
+      log_in!(@user)
+      redirect_to bands_url
     else
       flash[:error] = "Invalid login credentials"
       render :new

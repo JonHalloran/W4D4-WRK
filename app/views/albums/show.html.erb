@@ -1,0 +1,7 @@
+
+<h1><%= @album.title %></h1>
+<%= @album.year %>
+<br>
+<%= @album.recording_type %>
+<br>
+<a href= "<%= band_url(@album.band_id) %>"><%= @album.band.name %></a>

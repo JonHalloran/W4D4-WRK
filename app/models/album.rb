@@ -16,7 +16,7 @@ class Album < ApplicationRecord
   validates :title, null: false
   validates :year, null: false, inclusion: 1900..2018
   validates :recording_type, inclusion: { in: %w(live studio),
-    message: "not valide recording type" }
+            message: "not valide recording type" }
 
   belongs_to :band,
              foreign_key: :band_id,

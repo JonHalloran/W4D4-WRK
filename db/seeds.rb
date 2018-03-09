@@ -6,3 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times { Band.create!(name: Faker::VentureBros.character) }
+50.times { Album.create!(
+                         title: Faker::Book.title,
+                         year: rand(30) + 1980,
+                         band_id: [*1..10].sample,
+                         recording_type: %w(live studio).sample
+)
+}
